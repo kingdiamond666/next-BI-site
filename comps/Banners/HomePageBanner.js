@@ -156,8 +156,15 @@ export default function HomePageBanner() {
                   <span className="text-indigo-600 xl:inline">scale </span>
                   <span className="text-indigo-600 xl:inline">enrich </span>
                   <span className="text-indigo-600 xl:inline">save </span>
-                  </TextLoop> your</span>{' '}
-              <span className="block text-indigo-600 xl:inline">business</span>
+                  </TextLoop> your {' '}
+                  <TextLoop springConfig={{ stiffness: 180, damping: 8 }}>
+                  <span className="text-indigo-600 xl:inline">ROAS </span>
+                  <span className="text-indigo-600 xl:inline">ROI </span>
+                  <span className="text-indigo-600 xl:inline">customer experience </span>
+                  <span className="text-indigo-600 xl:inline">business </span></TextLoop></span>{' '}
+
+
+
             </h1>
             <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
               Take back <span className="text-indigo-600 xl:inline">ownership </span> of your data.

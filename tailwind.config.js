@@ -32,7 +32,7 @@ module.exports = {
     extend: {},
   },
   // eslint-disable-next-line global-require
-  plugins: [require(require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms")],
 }
 
 //"@tailwindcss/typography"),

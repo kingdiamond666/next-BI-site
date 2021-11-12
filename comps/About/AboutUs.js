@@ -5,10 +5,10 @@ import AnswerBox from '../AnswerBox/AnswerBox';
 
 
 const questionAnswers = [
-  { 
+  {
     key: 0,
     question: 'What Is the LifeTime Value of my customer?',
-    image: 'newplot (1).png', 
+    image: 'newplot (1).png',
     heading: 'The LTV of your customer is $258.19',
     keyTakeAwayHeadings: [
       {
@@ -32,7 +32,7 @@ const questionAnswers = [
   {
     key: 1,
     question: 'How well am I tracking my customer life-cycle?',
-    image: 'newplot (2).png', 
+    image: 'newplot (2).png',
     heading: 'Your web tracking is GREAT, so there\'s no need to take immediate action',
     keyTakeAwayHeadings: [
       {
@@ -44,7 +44,7 @@ const questionAnswers = [
   {
     key: 2,
     question: 'How Do My Shipping Times Effect Future Purchase Behavior?',
-    image: 'newplot (7).png', 
+    image: 'newplot (7).png',
     heading: 'The likelihood of a re-order drops by 5.38% after day 7 of waiting for their order to arrive.',
     keyTakeAwayHeadings: [
       {
@@ -64,11 +64,11 @@ const questionAnswers = [
 ]
 
 
-export default function AboutUs() {
+export default function AboutUs({title, body}) {
   const [question, setQuestion] = useState({
     key: 1,
     question: 'Where Should I Spend My Ad Budget?',
-    image: 'newplot (2).png', 
+    image: 'newplot (2).png',
     heading: 'Your web tracking is GREAT, so there\'s no need to take immediate action',
     keyTakeAwayHeadings: [
       "Web Tracking Status: GREAT"
@@ -90,10 +90,10 @@ export default function AboutUs() {
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between grid grid-row-3 row-auto gap-4">
         <div className="max-w-xl">
           <h2 className="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
-            About Us
+            {title}
           </h2>
           <p className="mt-5 text-xl text-gray-400">
-            We provide the genie in the bottle. You ask the questions the genie answers.
+          {body}
           </p>
         </div>
         <div className="row-span-3">

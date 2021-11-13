@@ -1,0 +1,30 @@
+DONE:
+- Break About Us Section into Separate Component to have statically rendered instead of from Dropdown.
+  -Pull example question component into it's own component.
+  -Use data from component to build a new component.
+  -Refactor to display multiple cards as opposed to dynamic with dropdown.
+collection of questions with answer cards.
+
+- Decide whether one strapi API Endpoint for the entire page vs. Single component endpoints?
+  -One API call at homepage for SSG.
+            vs.
+  -One API call per component.
+  -Chart out API design.
+  -Refactor component to pull from API array and render an icon, title, and description for each feature item.
+  -Dial in 'Features' list & hook into Strapi
+
+
+
+TODO:
+-Pipedrive API swap from AirTable
+-HCaptcha for form sub
+-Copy Finalized
+-Book a Demo Link
+-New Imagery...Should we hook into Cloudinary for images or leave them on the site file?
+-Menu Links (content and hrefs)
+-Modal Controlled from Strapi
+-Go through and destructure "content.dataItem" within components to simplify code.
+-refactor any uneeded code (comments, embedded data sources like arrays and objects that we no longer need)
+-research deployment strategy for Strapi
+-Logo
+-footer with Strapi integration

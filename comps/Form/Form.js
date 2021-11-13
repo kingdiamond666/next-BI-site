@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 export default function Form(props) {
     const [submitSuccess, setSubmitSuccess] = useState(false);
     const {register, handleSubmit, watch, formState: { errors }, control, setValue} = useForm();
-    console.log(errors)
+    // errors ? console.log(errors) : null;
     const {isSubmitSuccessful } = useFormState({control});
 
 
@@ -27,14 +27,14 @@ export default function Form(props) {
             setValue(value, '');
         }
         } catch (error) {
-        console.error(error) 
+        console.error(error)
         }
     }
 
 
 
   return (
-    <div className="relative bg-white">
+    <div id="GetInfo" className="relative bg-white">
       <div className="lg:absolute lg:inset-0">
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
@@ -47,10 +47,9 @@ export default function Form(props) {
       <div className="relative py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:py-32 lg:grid lg:grid-cols-2">
         <div className="lg:pr-8">
           <div className="max-w-md mx-auto sm:max-w-lg lg:mx-0">
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Let's work together</h2>
+            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{props.content.form_cta_title}</h2>
             <p className="mt-4 text-lg text-gray-500 sm:mt-3">
-              We’d love to hear from you! Send us a message using the form opposite, or email us. We’d love to hear from
-              you! Send us a message using the form opposite, or email us.
+            {props.content.form_cta_body}
             </p>
             <form onSubmit={handleSubmit(onSubmitForm)} className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
               <div>
@@ -92,12 +91,12 @@ export default function Form(props) {
                     {...register("email",{
                         required: {
                             value:true
-                        }, 
+                        },
                         pattern: {
                             value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
                             message: "Please enter a valid email address"
                         }
-                    
+
                     })}
                     id="email"
                     name="email"
@@ -138,8 +137,8 @@ export default function Form(props) {
                 <div className="mt-1">
                   <input
                     {...register("phone",{
-                        required: false, 
-                        message: "Please Enter A Valid Phone Number", 
+                        required: false,
+                        message: "Please Enter A Valid Phone Number",
                         pattern: {
                             value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
                             message: "Please Enter A Valid Phone Number"
@@ -258,7 +257,7 @@ export default function Form(props) {
                             value: true,
                             message: "Please tell us who sent you, we are paranoid like that."
                         }
-                    
+
                     })}
                     type="text"
                     name="reference"

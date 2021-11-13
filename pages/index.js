@@ -10,6 +10,7 @@ import Form from '../comps/Form/Form';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import ModalInner from '../comps/Modals/ModalInner';
+import QuestionGrid from '../comps/About/QuestionGrid';
 import {useState, useEffect} from 'react';
 
 //I am a test comment for a push
@@ -17,17 +18,17 @@ import {useState, useEffect} from 'react';
 Modal.setAppElement('#__next');
 
 export async function getStaticProps() {
-  const res = await fetch ('http://localhost:1337/about-us')
+  const res = await fetch ('http://localhost:1337/company')
   const data = await res.json();
   return {
-    props:{
-      title: data.About_Title,
-      body: data.About_Body
-    }
+    props: {
+      data,
+    },
   }
 }
 
-export default function Home({title, body}) {
+export default function Home({data}) {
+  // const { about } = data;
   const [modalIsOpen, setIsOpen] = useState(false);
   const [firstName, setFirstName] = useState('');
   const handleFormSuccess = async (value) => {
@@ -47,23 +48,24 @@ const firstNameHandler = name => {
   setFirstName(name)
 }
 
-// const logIt = async() =>{
-//   const res = await fetch ('http://localhost:1337/about-us')
-//   const dataInArray = await res.json();
-//   const data = await dataInArray[0]
-//   console.log(data)
-// }
+const logIt = async() =>{
+  const res = await fetch ('http://localhost:1337/company')
+  const dataInArray = await res.json();
+  const data = await dataInArray
+  console.log(data.header.button)
+}
   return (
     <Fragment>
       <Head />
-      <HomePageBanner/>
-      <AboutUs title={title} body={body}/>
-      <PlatformFeatures />
+      <HomePageBanner content={data.header} logTheData={logIt}/>
+      <QuestionGrid content={data.big_question}/>
+      <AboutUs contentInside={data.about}/>
+      <PlatformFeatures content={data.text_block} />
 
       <ModalInner firstName={firstName} closeModal={closeModal} isOpen={modalIsOpen}/>
 
-      <WorkWithUs />
-      <Form onSuccess={handleFormSuccess} handleFirstName={firstNameHandler}/>
+      <WorkWithUs content={data.copy_section}/>
+      <Form content={data.form_cta_section} onSuccess={handleFormSuccess} handleFirstName={firstNameHandler}/>
         <footer className={styles.footer}>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

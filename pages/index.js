@@ -21,12 +21,14 @@ import PlatformFeatures from '../comps/About/PlatformFeatures'
 import QuestionGrid from '../comps/About/QuestionGrid'
 import WorkWithUs from '../comps/About/WorkWithUs'
 
+import {server} from '../config'
+
 //Set Modal to attach to root element in Next App
 Modal.setAppElement('#__next')
 
 
 export async function getStaticProps() {
-  const res = await fetch (process.env.CLUB_API)
+  const res = await fetch (server)
   const data = await res.json()
   return {
     props: {

@@ -3,9 +3,9 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/outline'
 
-export default function ModalInner({isOpen, closeModal, firstName}) {
+export default function ModalInner({isOpen, closeModal, firstName, content}) {
   const [open, setOpen] = useState(isOpen)
-  
+  const {greeting, message} = content
   return (
     <Transition.Root show={isOpen} as={Fragment} onClick={() => closeModal()}>
       <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={() => closeModal()}>
@@ -42,11 +42,11 @@ export default function ModalInner({isOpen, closeModal, firstName}) {
                 </div>
                 <div className="mt-3 text-center sm:mt-5">
                   <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                    Thanks {firstName}
+                    {greeting} {firstName}
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      Stoked you wanna hear more! We will be reaching out soon.
+                      {message}
                     </p>
                   </div>
                 </div>

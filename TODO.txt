@@ -12,19 +12,40 @@ collection of questions with answer cards.
   -Chart out API design.
   -Refactor component to pull from API array and render an icon, title, and description for each feature item.
   -Dial in 'Features' list & hook into Strapi
-
-
-
-TODO:
--Pipedrive API swap from AirTable
--HCaptcha for form sub
--Copy Finalized
--Book a Demo Link
--New Imagery...Should we hook into Cloudinary for images or leave them on the site file?
--Menu Links (content and hrefs)
+  -Pipedrive API swap from AirTable
+  -HCaptcha for form sub
+  -Add company website to form and bring into slack and airtable
 -Modal Controlled from Strapi
+-Menu Links (content and hrefs) integrated to Strapi
+-About Copy Spread across Section
+-footer with Strapi integration
+-Icon error handling
+-Incorporate new sections into strapi:
+  -Wanna challenge us?
+  -New Question
+  -404 page
+-General placeholder text when item is returned with null value from Strapi.
+  -Create a function to wrap around your components and return another component if any data is ever missing.
+  -Take one argument of what to return if data is missing.
+  -throw in if check and if data is returned render the component as usual
 -Go through and destructure "content.dataItem" within components to simplify code.
 -refactor any uneeded code (comments, embedded data sources like arrays and objects that we no longer need)
 -research deployment strategy for Strapi
 -Logo
--footer with Strapi integration
+-Deploy strapi 1st so you can update URLS in getStaticProps
+
+TODO:
+-Work on spinner implementation
+-logos
+  -404 page
+  -Submit A Question page
+  -Home Page
+
+-Update all links
+-Tighten up HomePageBanner flowing into our "Trusted By" section make dotted section and background color match
+-Copy Finalized
+-Book a Demo Link
+-New Imagery
+-Make sure you are correctly generating homepage as a static site
+-Test that you are pulling from the deployed Strapi instance
+-add error handling to getStaticProps and any other data dependant areas of site

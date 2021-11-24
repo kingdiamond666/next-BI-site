@@ -1,4 +1,7 @@
-/* This example requires Tailwind CSS v2.0+ */
+import React, {createElement} from 'react'
+
+import DynamicIcon from '../UI/DynamicIcon';
+//ICONS
 import {
     ChatAltIcon,
     DocumentReportIcon,
@@ -9,64 +12,7 @@ import {
     TrashIcon,
     UsersIcon,
   } from '@heroicons/react/outline'
-  import React, {createElement} from 'react'
-  import DynamicIcon from '../UI/DynamicIcon';
-  // Build an object that uses the variables and use a string to select which icon goes where.
-let icons = {
-  "ChatAltIcon": ChatAltIcon,
-  "DocumentReportIcon": DocumentReportIcon,
-  "HeartIcon": HeartIcon,
-  "InboxIcon": InboxIcon,
-  "PencilAltIcon": PencilAltIcon,
-  "ReplyIcon": ReplyIcon,
-  "TrashIcon": TrashIcon,
-  "UsersIcon": UsersIcon,
-}
-  /* I.E.
-  then select by using something like icons[myStrapiAPI.data.feature.icon]
-*/
-  const featuresNative = [
-    {
-      name: 'Data On Demand',
-      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-      icon: InboxIcon,
-    },
-    {
-      name: 'Scale And Grow Customers',
-      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-      icon: UsersIcon,
-    },
-    {
-      name: 'Know The DNA of Your Customers',
-      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-      icon: TrashIcon,
-    },
-    {
-      name: 'Dynamically Generated Playbooks',
-      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-      icon: PencilAltIcon,
-    },
-    {
-      name: 'Team Reporting',
-      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-      icon: DocumentReportIcon,
-    },
-    {
-      name: 'Saved Replies',
-      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-      icon: ReplyIcon,
-    },
-    {
-      name: 'Email Commenting',
-      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-      icon: ChatAltIcon,
-    },
-    {
-      name: 'Connect with Customers',
-      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-      icon: HeartIcon,
-    },
-  ]
+
 
   export default function PlatformFeatures({content}) {
     const {features_title, features_subtitle, features} = content;

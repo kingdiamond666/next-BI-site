@@ -1,36 +1,65 @@
 import {useForm, useFormState} from 'react-hook-form';
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
+//Spinners Shelf
+import {css} from '@emotion/react'
+import ClipLoader from 'react-spinners/ClipLoader'
 
-export default function Form(props) {
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`
+
+export default function Form({content, onSuccess, handleFirstName}) {
+    const [color, setColor] = useState("#ffffff");
+    const captcha = useRef();
     const [submitSuccess, setSubmitSuccess] = useState(false);
-    const {register, handleSubmit, watch, formState: { errors }, control, setValue} = useForm();
-    // errors ? console.log(errors) : null;
+    const preloadedValues = {
+      first_name: "",
+      last_name: "",
+      email: "",
+      company_name: "",
+      company_url: "www.",
+      message_long: ""
+
+    }
+    const {register, handleSubmit, watch, formState, formState: { errors }, control, setValue} = useForm({
+      defaultValues: preloadedValues
+    });
+    const {isSubmitting} = formState
+    errors ? console.log(errors) : null;
     const {isSubmitSuccessful } = useFormState({control});
 
 
     const onSubmitForm = async values => {
-        console.log(values.first_name);
-
         try {
-        const response = await fetch('/api/createLead', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(values)
-        })
-        // await isSubmitSuccessful ? props.onSuccess(true) : setSubmitSuccess(false);
-        props.onSuccess(true)
-        props.handleFirstName(values.first_name)
-        for(let value in values){
-            setValue(value, '');
+          return new Promise(resolve =>{
+            // Post to API endpoint with hcaptcha
+            const response = fetch('/api/createLead', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(values)
+            })
+
+            //Fire onSuccess and bring on the modal
+            onSuccess(true)
+            //Pass first name onto modal
+            handleFirstName(values.first_name)
+            //Empty Fields
+            for(let value in values){
+                setValue(value, '');
+            }
+            resolve()
+          })
         }
-        } catch (error) {
+        catch (error) {
         console.error(error)
         }
     }
-
 
 
   return (
@@ -47,18 +76,22 @@ export default function Form(props) {
       <div className="relative py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:py-32 lg:grid lg:grid-cols-2">
         <div className="lg:pr-8">
           <div className="max-w-md mx-auto sm:max-w-lg lg:mx-0">
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{props.content.form_cta_title}</h2>
+            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{content.form_cta_title}</h2>
             <p className="mt-4 text-lg text-gray-500 sm:mt-3">
-            {props.content.form_cta_body}
+            {content.form_cta_body}
             </p>
             <form onSubmit={handleSubmit(onSubmitForm)} className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+            {/*FIRST NAME*/}
               <div>
                 <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
                   First name
                 </label>
                 <div className="mt-1">
                   <input
-                    {...register("first_name",{required: true, pattern: /^[A-Za-z_\- ]+$/i})}
+                    {...register("first_name",{required: true, pattern: {
+                      value: /^[A-Za-z_\- ]+$/i,
+                      message:"Please enter a name with no special characters"
+                    }})}
                     type="text"
                     name="first_name"
                     id="first_name"
@@ -66,14 +99,19 @@ export default function Form(props) {
                     className={`${errors.first_name ? 'ring-2 ring-red-500': null } block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md`}
                   />
                 </div>
+                <span className="text-sm font-medium text-red-400">{errors?.first_name?.message}</span>
               </div>
+              {/*LAST NAME*/}
               <div>
                 <label htmlFor="last_name" className="block text-sm font-medium text-gray-700">
                   Last name
                 </label>
                 <div className="mt-1">
                   <input
-                    {...register("last_name",{required: true, pattern: /^[A-Za-z_\- ]+$/i})}
+                    {...register("last_name",{required: true, pattern: {
+                      value:/^[A-Za-z_\- ]+$/i,
+                      message: "Please enter a valid last name with no special characters"
+                    }})}
                     type="text"
                     name="last_name"
                     id="last_name"
@@ -81,7 +119,9 @@ export default function Form(props) {
                     className={`${errors.last_name ? 'ring-2 ring-red-500': null } block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md`}
                   />
                 </div>
+                <span className="text-sm font-medium text-red-400">{errors?.last_name?.message}</span>
               </div>
+              {/*EMAIL*/}
               <div className="sm:col-span-2">
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                   Email
@@ -108,6 +148,7 @@ export default function Form(props) {
                 <span className="text-sm font-medium text-red-400">{errors?.email?.message}</span>
 
               </div>
+            {/*COMPANY*/}
               <div className="sm:col-span-2">
                 <label htmlFor="company_name" className="block text-sm font-medium text-gray-700">
                   Company
@@ -125,6 +166,25 @@ export default function Form(props) {
                 <span className="text-sm font-medium text-red-400">{errors?.company_name?.message}</span>
 
               </div>
+              {/*COMPANY WEBSITE*/}
+              <div className="sm:col-span-2">
+                <label htmlFor="company_name" className="block text-sm font-medium text-gray-700">
+                  Company Website
+                </label>
+                <div className="mt-1">
+                  <input
+                    {...register("company_url",{required: true, pattern: /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi})}
+                    type="text"
+                    name="company_url"
+                    id="company_url"
+                    autoComplete="organization"
+                    className={`${errors.company_url ? 'ring-2 ring-red-500': null } block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md`}
+                  />
+                </div>
+                <span className="text-sm font-medium text-red-400">{errors?.company_url?.message}</span>
+
+              </div>
+              {/*PHONE*/}
               <div className="sm:col-span-2">
                 <div className="flex justify-between">
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
@@ -154,6 +214,7 @@ export default function Form(props) {
                    <span className="text-sm font-medium text-red-400">{errors?.phone?.message}</span>
                 </div>
               </div>
+            {/*MESSAGE LONG*/}
               <div className="sm:col-span-2">
                 <div className="flex justify-between">
                   <label htmlFor="how-can-we-help" className="block text-sm font-medium text-gray-700">
@@ -189,6 +250,7 @@ export default function Form(props) {
                 </div>
                 <span className="text-sm font-medium text-red-400">{errors?.message_long?.message}</span>
               </div>
+              {/*BUDGET*/}
               <fieldset className="sm:col-span-2">
                 <legend className="block text-sm font-medium text-gray-700">Expected budget</legend>
                 <div className="mt-4 grid grid-cols-1 gap-y-4">
@@ -246,6 +308,7 @@ export default function Form(props) {
                   </div>
                 </div>
               </fieldset>
+            {/*REFERENCE*/}
               <div className="sm:col-span-2">
                 <label htmlFor="reference" className="block text-sm font-medium text-gray-700">
                   How did you hear about us?
@@ -264,18 +327,45 @@ export default function Form(props) {
                     id="reference"
                     className={`${errors.reference ? 'ring-2 ring-red-500': null } shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md`}
                   />
-                  <span className="ext-sm font-medium text-red-400">{errors?.howDidYouHearAboutUs?.message}</span>
+                  <span className="text-sm font-medium text-red-400">{errors?.howDidYouHearAboutUs?.message}</span>
                 </div>
               </div>
+              <br />
+            {/*HCAPTCHA*/}
+              <div className="sm:col-span-2">
+              <div className={errors["h-captcha-response"] ? "border-2 border-red-500" : "block text-sm font-medium text-gray-700 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"}>
+                  <HCaptcha required {...register("h-captcha-response", { required: true })}
+                      onVerify={(v) => { setValue("h-captcha-response", v, { shouldValidate: true }) }}
+                      ref={captcha}
+                      sitekey={process.env.NEXT_PUBLIC_SITE_KEY} />
+              </div>
+              {errors["h-captcha-response"] ? (<label class="label">
+                  <span className="label-text-alt">Required Field</span>
+              </label>) : []}
+              </div>
               <div className="text-right sm:col-span-2">
+              <p className="mt-3 text-sm text-indigo-600">
+                We care about the protection of your data. Read our{' '}
+                <a href="#" className="text-indigo-700 font-medium underline">
+                  Privacy Policy.
+                </a>
+              </p>
+              <br/>
+            {/*SUBMIT BUTTON*/}
                 <button
+                  disabled={isSubmitting}
                   type="submit"
                   className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
+                {isSubmitting && <span className="spinner-border spinner-border-sm mr-1">
+                  <ClipLoader color='black' loading={true} css={override} size={150} />
+                </span>}
                   Submit
                 </button>
+
               </div>
             </form>
+
           </div>
         </div>
       </div>

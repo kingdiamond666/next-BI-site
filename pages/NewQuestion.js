@@ -6,6 +6,7 @@ import MainMenu from '../comps/UI/MainMenu'
 import NewQuestionForm from '../comps/Form/NewQuestionForm'
 import ModalInner from '../comps/Modals/ModalInner'
 import {server} from '../config/'
+import {fetch} from 'node-fetch'
 
 export async function getStaticProps() {
   const res = await fetch (server)

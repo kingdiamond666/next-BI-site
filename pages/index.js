@@ -20,6 +20,7 @@ import ModalInner from '../comps/Modals/ModalInner'
 import PlatformFeatures from '../comps/About/PlatformFeatures'
 import QuestionGrid from '../comps/About/QuestionGrid'
 import WorkWithUs from '../comps/About/WorkWithUs'
+import {fetch } from 'node-fetch'
 
 import {server} from '../config'
 

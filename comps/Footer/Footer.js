@@ -99,14 +99,14 @@ const Footer = ({content}) =>{
             <div className="md:grid md:grid-cols-2 md:gap-8">
               {firstTwoFooterItems.map((item, i) => {
                 return(
-                  <FooterItem key={item.id} title={item.title} links={item.links} secondaryClass={i == 1 ? 'mt-12 md:mt-0' : ''}/>
+                  <FooterItem keyId={item.id} title={item.title} links={item.links} secondaryClass={i == 1 ? 'mt-12 md:mt-0' : ''}/>
                 )
               })}
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
             {secondTwoFooterItems.map((item, i) => {
               return(
-                <FooterItem key={item.id} title={item.title} links={item.links} secondaryClass={i == 1 ? 'mt-12 md:mt-0' : ''}/>
+                <FooterItem keyId={item.id} title={item.title} links={item.links} secondaryClass={i == 1 ? 'mt-12 md:mt-0' : ''}/>
               )
             })}
             </div>

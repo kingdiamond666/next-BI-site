@@ -1,6 +1,6 @@
-const FooterItem = ({title, links, key, secondaryClass}) => {
+const FooterItem = ({title, links, keyId, secondaryClass}) => {
   return(
-    <div key={key} className={secondaryClass}>
+    <div key={keyId} className={secondaryClass}>
     <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">{title}</h3>
     <ul role="list" className="mt-4 space-y-4">
       {links.map((item) => (

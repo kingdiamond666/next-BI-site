@@ -26,7 +26,7 @@ Modal.setAppElement('#__next')
 
 
 export async function getStaticProps() {
-  const res = await fetch ('https://club-bi-backend.herokuapp.com/company')
+  const res = await fetch (process.env.CLUB_API)
   const data = await res.json()
   return {
     props: {

@@ -1,5 +1,6 @@
 import Footer from '../comps/Footer/Footer';
 import MainMenu from '../comps/UI/MainMenu'
+import {server} from '../config'
 export async function getStaticProps() {
   const res = await fetch (server)
   const data = await res.json();

@@ -157,7 +157,7 @@ export default async (req, res) => {
             }
         ]
     }
-    const url = 'https://hooks.slack.com/services/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'
+    const url = process.env.SLACK_URL
     // const webhook = new IncomingWebhook(url);
     //
     // (async () => {
@@ -175,7 +175,7 @@ export default async (req, res) => {
         },
         body: JSON.stringify(slackLead)
 
-    }).then(response => console.log(JSON.stringify(slackLead)))
+    }).then(response => console.log(response))
 
 
 //TODO: Prob use a response object to see what error mesage you are getting when trying to send the fetch post req to the slack API endpoint.

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.15.8",
+    "@emotion/babel-plugin": "^11.3.0",
     "@hcaptcha/react-hcaptcha": "^0.3.9",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",

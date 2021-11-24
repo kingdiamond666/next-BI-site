@@ -158,13 +158,7 @@ export default async (req, res) => {
         ]
     }
     const url = process.env.SLACK_URL
-    // const webhook = new IncomingWebhook(url);
-    //
-    // (async () => {
-    //   await webhook.send({
-    //     text: 'Check it out puto'
-    //   })
-    // })()
+
 
 
     const sentSlack = JSON.stringify(slackLead)

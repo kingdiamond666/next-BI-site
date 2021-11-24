@@ -84,7 +84,7 @@ export default function HomePageBanner({content, menuItems}) {
               </div>
               <div className="hidden md:flex md:space-x-10">
                 {menuItems.map((item) => (
-                  <a key={item.id} href='/' className="font-medium text-gray-500 hover:text-gray-900">
+                  <a key={item.id} href={item.link} className="font-medium text-gray-500 hover:text-gray-900">
                     {item.title}
                   </a>
                 ))}

@@ -1,7 +1,7 @@
 import Footer from '../comps/Footer/Footer';
 import MainMenu from '../comps/UI/MainMenu'
 export async function getStaticProps() {
-  const res = await fetch ('http://localhost:1337/company')
+  const res = await fetch (process.env.CLUB_API)
   const data = await res.json();
   return {
     props: {

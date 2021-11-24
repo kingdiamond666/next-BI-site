@@ -7,7 +7,7 @@ import NewQuestionForm from '../comps/Form/NewQuestionForm'
 import ModalInner from '../comps/Modals/ModalInner'
 
 export async function getStaticProps() {
-  const res = await fetch ('https://club-bi-backend.herokuapp.com/company')
+  const res = await fetch (process.env.CLUB_API)
   const data = await res.json();
   return {
     props: {

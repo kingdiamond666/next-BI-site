@@ -31,6 +31,7 @@ Modal.setAppElement('#__next')
 export async function getStaticProps() {
   const res = await fetch (server)
   const data = await res.json()
+  
   return {
     props: {
       data,
@@ -56,7 +57,7 @@ export default function Home({data}) {
     setFirstName(name)
   }
 
-const{menu_items, header, about, big_question, question_cta, text_block, modal, copy_section, form_cta_section, footer_menu_items} = data
+const{menu_items, header, about, big_questions_title ,big_question, question_cta, text_block, modal, copy_section, form_cta_section, footer_menu_items} = data
 
   return (
     <Fragment>
@@ -64,7 +65,7 @@ const{menu_items, header, about, big_question, question_cta, text_block, modal, 
       <HomePageBanner menuItems={menu_items} content={header} />
       <FeaturedBy />
       <AboutUs contentInside={about}/>
-      <QuestionGrid content={big_question} ctaSection={question_cta}/>
+      <QuestionGrid title={big_questions_title}content={big_question} ctaSection={question_cta}/>
       <PlatformFeatures content={text_block} />
       <ModalInner content={modal} firstName={firstName} closeModal={closeModal} isOpen={modalIsOpen}/>
       <WorkWithUs content={copy_section}/>

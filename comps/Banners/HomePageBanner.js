@@ -145,7 +145,7 @@ export default function HomePageBanner({content, menuItems}) {
                   <span className="text-indigo-600 xl:inline">grow </span>
                   <span className="text-indigo-600 xl:inline">scale </span>
                   <span className="text-indigo-600 xl:inline">enrich </span>
-                  <span className="text-indigo-600 xl:inline">save </span>
+                  <span className="text-indigo-600 xl:inline">power </span>
                   </TextLoop> your {' '}
                   <TextLoop springConfig={{ stiffness: 180, damping: 8 }}>
                   <span className="text-indigo-600 xl:inline">ROAS </span>

@@ -34,6 +34,8 @@ export default function QuestionGrid({content, ctaSection, title}) {
                       </Disclosure.Button>
                     </dt>
                     <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                    <span className="font-small text-gray-900">{question.big_question_subtitle}</span>
+
                       {question.fact.map(fact => {
                         return(
                         <AnswerBoxGrid fact_number={fact.fact_number} pointId={fact.id} mainPoint={fact.fact_heading} subPoint={fact.fact_body}/>

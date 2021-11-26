@@ -59,7 +59,7 @@ export default function NewQuestionForm({onSuccess, handleFirstName, cta, subCta
                   id="first_name"
                   autoComplete="given-name"
                   className={`${errors.first_name ? 'ring-2 ring-red-500': null } w-full border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white rounded-md`}
-                  placeholder="Enter your email"
+                  placeholder="Enter your first name"
                 />
               </div>
             </div>

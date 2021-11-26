@@ -96,6 +96,7 @@ export default function Form({content, onSuccess, handleFirstName}) {
                     name="first_name"
                     id="first_name"
                     autoComplete="given-name"
+                    placeholder="Enter your first name"
                     className={`${errors.first_name ? 'ring-2 ring-red-500': null } block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md`}
                   />
                 </div>
@@ -116,6 +117,7 @@ export default function Form({content, onSuccess, handleFirstName}) {
                     name="last_name"
                     id="last_name"
                     autoComplete="family-name"
+                    placeholder="Enter your last name"
                     className={`${errors.last_name ? 'ring-2 ring-red-500': null } block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md`}
                   />
                 </div>
@@ -142,6 +144,7 @@ export default function Form({content, onSuccess, handleFirstName}) {
                     name="email"
                     type="text"
                     autoComplete="email"
+                    placeholder="Enter your email"
                     className={`${errors.email ? 'ring-2 ring-red-500': null } block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md`}
                   />
                 </div>
@@ -160,6 +163,7 @@ export default function Form({content, onSuccess, handleFirstName}) {
                     name="company_name"
                     id="company_name"
                     autoComplete="organization"
+                    placeholder="Enter your company name"
                     className={`${errors.company_name ? 'ring-2 ring-red-500': null } block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md`}
                   />
                 </div>

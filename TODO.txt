@@ -34,13 +34,42 @@ collection of questions with answer cards.
 -Logo
 -Deploy strapi 1st so you can update URLS in getStaticProps
 
+Businesses:
+  Ecommerce, Franchise
+Revenue:
+  Total Gross: $1M
+  25k-100k/month marketing budget
+Problems:
+  Facebook Ads not hitting
+
+Collecting Data:
+What do you do with your data?
+How deep do your analytics go? Whats the most detailed example of your usage?
+
+You can't look into the future.
+No crystal ball.
+you can know what is working, but you never find out why.
+Drive decision-making and power personalized customer experiences.
+
+By collecting customer data from many different
+channels, and unifying it into one location,
+CDPs offer all teams within the business—from
+marketing to analytics—a single, accessible, and
+real-time view of their customer.
+
+
+
+We empower companies to gain insight into the answers they need today for tomorrow's questions by integrating our Data-Centric Customer Platform™.
+
+
+
 TODO:
 -Work on spinner implementation
 -logos
   -404 page
   -Submit A Question page
   -Home Page
-
+-Add subtitle to Example questions from Strapi
 -Update all links
 -Tighten up HomePageBanner flowing into our "Trusted By" section make dotted section and background color match
 -Copy Finalized
@@ -49,3 +78,5 @@ TODO:
 -Make sure you are correctly generating homepage as a static site
 -Test that you are pulling from the deployed Strapi instance
 -add error handling to getStaticProps and any other data dependant areas of site
+
+Questions based on Role easier and more SEO friendly way would be to send to different pages with dropdown components.

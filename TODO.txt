@@ -36,6 +36,7 @@ collection of questions with answer cards.
 -Add subtitle to Example questions from Strapi
 -Make sure you are correctly generating homepage as a static site
 -Test that you are pulling from the deployed Strapi instance
+-Logos for WITH, LJ, Pelaton,
 
 
 
@@ -45,7 +46,6 @@ TODO:
   -404 page
   -Submit A Question page
   -Home Page
--Logos for WITH, LJ, Pelaton,
 -Footer Links
 -Update all links
 -Tighten up HomePageBanner flowing into our "Trusted By" section make dotted section and background color match

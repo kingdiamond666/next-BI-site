@@ -20,6 +20,7 @@ import ModalInner from '../comps/Modals/ModalInner'
 import PlatformFeatures from '../comps/About/PlatformFeatures'
 import QuestionGrid from '../comps/About/QuestionGrid'
 import WorkWithUs from '../comps/About/WorkWithUs'
+import Reviews from '../comps/Banners/Reviews'
 import fetch from 'node-fetch'
 
 import {server} from '../config'
@@ -64,6 +65,7 @@ const{menu_items, header, about, big_questions_title ,big_question, question_cta
       <Head />
       <HomePageBanner menuItems={menu_items} content={header} />
       <FeaturedBy />
+      <Reviews />
       <AboutUs contentInside={about}/>
       <QuestionGrid title={big_questions_title}content={big_question} ctaSection={question_cta}/>
       <PlatformFeatures content={text_block} />

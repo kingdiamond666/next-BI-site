@@ -33,8 +33,9 @@ collection of questions with answer cards.
 -research deployment strategy for Strapi
 -Logo
 -Deploy strapi 1st so you can update URLS in getStaticProps
-
-
+-Add subtitle to Example questions from Strapi
+-Make sure you are correctly generating homepage as a static site
+-Test that you are pulling from the deployed Strapi instance
 
 
 
@@ -44,13 +45,12 @@ TODO:
   -404 page
   -Submit A Question page
   -Home Page
--Add subtitle to Example questions from Strapi
+-Logos for WITH, LJ, Pelaton,
+-Footer Links
 -Update all links
 -Tighten up HomePageBanner flowing into our "Trusted By" section make dotted section and background color match
 -Copy Finalized
 -Book a Demo Link
 -New Imagery
--Make sure you are correctly generating homepage as a static site
--Test that you are pulling from the deployed Strapi instance
 -add error handling to getStaticProps and any other data dependant areas of site
 

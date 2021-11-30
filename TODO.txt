@@ -37,6 +37,7 @@ collection of questions with answer cards.
 -Make sure you are correctly generating homepage as a static site
 -Test that you are pulling from the deployed Strapi instance
 -Logos for WITH, LJ, Pelaton,
+-Tighten up HomePageBanner flowing into our "Trusted By" section make dotted section and background color match
 
 
 
@@ -48,7 +49,6 @@ TODO:
   -Home Page
 -Footer Links
 -Update all links
--Tighten up HomePageBanner flowing into our "Trusted By" section make dotted section and background color match
 -Copy Finalized
 -Book a Demo Link
 -New Imagery

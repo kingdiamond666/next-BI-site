@@ -10,18 +10,18 @@ export default function FeaturedBy() {
           <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
             <img
               className="max-h-12"
-              src="/companyLogos/New-Wear-It-To-Heart-Lettermark-Grey@1x.png"
+              src="/companyLogos/grey/New-Wear-It-To-Heart-Lettermark-Grey@1x.png"
               alt="Wear It To Heart"
             />
           </div>
           <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img className="max-h-12" src="/companyLogos/Beatifics-Logo-Grey.png" alt="Beatifics" />
+            <img className="max-h-12" src="/companyLogos/grey/Beatifics-Logo-Grey.png" alt="Beatifics" />
           </div>
           <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img className="max-h-24" src="/companyLogos/peloton-2.png" alt="Peloton" />
+            <img className="max-h-24" src="/companyLogos/grey/peloton-2.png" alt="Peloton" />
           </div>
           <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-            <img className="max-h-24" src="/companyLogos/LJ-Angled-Badge-Grey@Large.png" alt="Lauren James" />
+            <img className="max-h-24" src="/companyLogos/grey/LJ-Angled-Badge-Grey@Large.png" alt="Lauren James" />
           </div>
           <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
             <img

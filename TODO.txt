@@ -38,10 +38,12 @@ collection of questions with answer cards.
 -Test that you are pulling from the deployed Strapi instance
 -Logos for WITH, LJ, Pelaton,
 -Tighten up HomePageBanner flowing into our "Trusted By" section make dotted section and background color match
+-Book a Demo Link
 
 
 
 TODO:
+-Privacy Policy
 -Work on spinner implementation
 -logos
   -404 page
@@ -50,7 +52,6 @@ TODO:
 -Footer Links
 -Update all links
 -Copy Finalized
--Book a Demo Link
 -New Imagery
 -add error handling to getStaticProps and any other data dependant areas of site
 

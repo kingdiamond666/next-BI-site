@@ -69,9 +69,9 @@ export default function HomePageBanner({content, menuItems}) {
                   <a href="#">
                     <span className="sr-only">Club Agency Data Science</span>
                     <img
-                      className="h-8 w-auto sm:h-10"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                      alt=""
+                      className="h-12 w-auto sm:h-16"
+                      src="/For Web/svg/Color logo - no background.svg"
+                      alt="DSAS By The Club Agency"
                     />
                   </a>
                   <div className="-mr-2 flex items-center md:hidden">
@@ -110,9 +110,9 @@ export default function HomePageBanner({content, menuItems}) {
                 <div className="px-5 pt-4 flex items-center justify-between">
                   <div>
                     <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                      alt=""
+                      className="h-12 w-auto"
+                      src="/For Web/svg/Color logo - no background.svg"
+                      alt="DSAS By The Club Agency"
                     />
                   </div>
                   <div className="-mr-2">

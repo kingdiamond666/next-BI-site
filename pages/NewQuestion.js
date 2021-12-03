@@ -154,32 +154,36 @@ const firstNameHandler = name => {
                 <h1 className="text-5xl font-extrabold text-white">{page_title}</h1>
                 <h2 className="text-xl font-extrabold text-white mt-4">{page_body}</h2>
                 <div className="flow-root mt-8 lg:mt-10">
-                  <div className="-mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4">
-                    <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                      <img className="h-12" src="https://tailwindui.com/img/logos/tuple-logo-indigo-300.svg" alt="Tuple" />
+                  <div className="items-center -mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4">
+                  <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                      <img
+                        className="h-12"
+                        src="/companyLogos/blue/Wear-It-To-Heart-Lettermark-Blue@1x.png" alt="Wear It To Heart"
+                      />
                     </div>
                     <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                      <img className="h-12" src="https://tailwindui.com/img/logos/mirage-logo-indigo-300.svg" alt="Mirage" />
+                      <img className="h-12" src="/companyLogos/blue/Beatifics-Logo-Blue.png" alt="Beatifics" />
+                    </div>
+                    <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                      <img className="h-24" src="/companyLogos/blue/Peloton-Logo-Blue.png" alt="Peloton" />
                     </div>
                     <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
                       <img
-                        className="h-12"
-                        src="https://tailwindui.com/img/logos/statickit-logo-indigo-300.svg"
-                        alt="StaticKit"
+                        className="h-24"
+                        src="/companyLogos/blue/LJ-Angled-Badge-Blue@Large.png" alt="Lauren James"
                       />
                     </div>
                     <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
                       <img
-                        className="h-12"
+                        className="h-24"
+                        src="https://tailwindui.com/img/logos/tuple-logo-indigo-300.svg" alt="Tuple"
+                      />
+                    </div>
+                    <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                      <img
+                        className="h-24"
                         src="https://tailwindui.com/img/logos/transistor-logo-indigo-300.svg"
-                        alt="Transistor"
-                      />
-                    </div>
-                    <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                      <img
-                        className="h-12"
-                        src="https://tailwindui.com/img/logos/workcation-logo-indigo-300.svg"
-                        alt="Workcation"
+              alt="Transistor"
                       />
                     </div>
                   </div>

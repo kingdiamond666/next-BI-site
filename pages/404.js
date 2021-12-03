@@ -34,8 +34,8 @@ export default function Example({data}) {
                   <span className="sr-only">Workflow</span>
                   <img
                     className="h-12 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
-                    alt=""
+                    src="/For Web/svg/Color logo - no background.svg"
+                    alt="DSAS By The Club Agency"
                   />
                 </a>
               </div>
@@ -58,14 +58,6 @@ export default function Example({data}) {
               <nav className="flex space-x-4">
                 <a href="/#GetInfo" className="text-sm font-medium text-gray-500 hover:text-gray-600">
                   Contact Support
-                </a>
-                <span className="inline-block border-l border-gray-300" aria-hidden="true" />
-                <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-600">
-                  Status
-                </a>
-                <span className="inline-block border-l border-gray-300" aria-hidden="true" />
-                <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-600">
-                  Twitter
                 </a>
               </nav>
             </div>

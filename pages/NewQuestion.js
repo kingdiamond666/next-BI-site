@@ -162,28 +162,12 @@ const firstNameHandler = name => {
                       />
                     </div>
                     <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                      <img className="h-12" src="/companyLogos/blue/Beatifics-Logo-Blue.png" alt="Beatifics" />
-                    </div>
-                    <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
                       <img className="h-24" src="/companyLogos/blue/Peloton-Logo-Blue.png" alt="Peloton" />
                     </div>
                     <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
                       <img
                         className="h-24"
                         src="/companyLogos/blue/LJ-Angled-Badge-Blue@Large.png" alt="Lauren James"
-                      />
-                    </div>
-                    <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                      <img
-                        className="h-24"
-                        src="https://tailwindui.com/img/logos/tuple-logo-indigo-300.svg" alt="Tuple"
-                      />
-                    </div>
-                    <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                      <img
-                        className="h-24"
-                        src="https://tailwindui.com/img/logos/transistor-logo-indigo-300.svg"
-              alt="Transistor"
                       />
                     </div>
                   </div>

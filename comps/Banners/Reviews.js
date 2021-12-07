@@ -52,7 +52,7 @@ export default function Reviews() {
             <div className="hidden lg:block lg:flex-shrink-0">
               <img
                 className="h-64 w-64 rounded-full xl:h-80 xl:w-80"
-                src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYyOTkyMTUxNw&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=auto&q=80"
+                src="/images/Cropped-Wear-It-To-Heart-Mid-Holiday-Homepage-Banner-Mobile.jpg"
                 alt=""
               />
             </div>
@@ -81,7 +81,7 @@ export default function Reviews() {
                     <div className="flex-shrink-0 lg:hidden">
                       <img
                         className="h-12 w-12 rounded-full"
-                        src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYyOTkyMTUxNw&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=auto&q=80"
+                        src="/images/Cropped-Wear-It-To-Heart-Mid-Holiday-Homepage-Banner-Mobile.jpg"
                         alt=""
                       />
                     </div>

@@ -73,7 +73,7 @@ export default function Reviews() {
               <blockquote className="relative">
                 <div className="text-2xl leading-9 font-medium text-gray-900">
                   <p>
-                    Club Agency's DSAS Platform completely transformed my marketing approach. Instead of blindly sending ads to various customers, I could now create omni-channel experiences custom tailored to each customer, and know what product will move based on first-party data.
+                    Club Agency's DSAS Platform completely transformed my marketing approach. Instead of blindly sending ads to various customers, I could now create omni-channel experiences custom tailored to each customer, and know what legging or top will move based on first-party data.
                   </p>
                 </div>
                 <footer className="mt-8">

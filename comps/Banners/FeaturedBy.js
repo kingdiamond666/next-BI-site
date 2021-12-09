@@ -8,17 +8,23 @@ export default function FeaturedBy() {
         </p>
         <div className="items-center mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
           <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+            <a href="https://www.wearittoheart.com">
             <img
               className="max-h-12"
               src="/companyLogos/grey/New-Wear-It-To-Heart-Lettermark-Grey@1x.png"
               alt="Wear It To Heart"
             />
+            </a>
           </div>
           <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+            <a href="https://www.onepeloton.com">
             <img className="max-h-24" src="/companyLogos/grey/peloton-2.png" alt="Peloton" />
+            </a>
           </div>
           <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+            <a href="https://www.laurenjames.com">
             <img className="max-h-24" src="/companyLogos/grey/LJ-Angled-Badge-Grey@Large.png" alt="Lauren James" />
+            </a>
           </div>
         </div>
       </div>

@@ -78,7 +78,7 @@ export default function Form({content, onSuccess, handleFirstName}) {
           <div className="max-w-md mx-auto sm:max-w-lg lg:mx-0">
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{content.form_cta_title}</h2>
             <p className="mt-4 text-lg text-gray-500 sm:mt-3">
-            {content.form_cta_body}
+            {content.form_cta_body} <a href="mailto:info@theclubagency.com">info@theclubagency.com</a>
             </p>
             <form onSubmit={handleSubmit(onSubmitForm)} className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
             {/*FIRST NAME*/}

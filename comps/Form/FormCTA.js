@@ -16,7 +16,7 @@ const FormCTA = (props) => {
           <div className="max-w-md mx-auto sm:max-w-lg lg:mx-0">
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{props.content.form_cta_title}</h2>
             <p className="mt-4 text-lg text-gray-500 sm:mt-3">
-            {props.content.form_cta_body}
+            {props.content.form_cta_body} <a href="mailto:info@theclubagency.com">info@theclubagency.com</a>
             </p>
           </div>
         </div>

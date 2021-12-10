@@ -157,16 +157,16 @@ const firstNameHandler = name => {
                   <div className="items-center -mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4">
                   <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
                       <img
-                        className="h-12"
+                        className="max-h-12"
                         src="/companyLogos/blue/Wear-It-To-Heart-Lettermark-Blue@1x.png" alt="Wear It To Heart"
                       />
                     </div>
                     <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
-                      <img className="h-24" src="/companyLogos/blue/Peloton-Logo-Blue.png" alt="Peloton" />
+                      <img className="max-h-24" src="/companyLogos/blue/Peloton-Logo-Blue.png" alt="Peloton" />
                     </div>
                     <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
                       <img
-                        className="h-24"
+                        className="max-h-24"
                         src="/companyLogos/blue/LJ-Angled-Badge-Blue@Large.png" alt="Lauren James"
                       />
                     </div>

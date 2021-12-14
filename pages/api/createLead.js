@@ -173,11 +173,12 @@ export default async (req, res) => {
 
 
 //TODO: Prob use a response object to see what error mesage you are getting when trying to send the fetch post req to the slack API endpoint.
-// Also make sure you are using the fetch API correctly.
 
 
-    // console.log("this is the request");
-    // console.log(req.body);
+    const fbEvnt = await fetch('https://graph.facebook.com/{API_VERSION}/{PIXEL_ID}/events?access_token={TOKEN}', {
+        method: 'POST',
+
+    })
     res.statusCode = 200;
     res.json(createdRecord);
   } catch (error) {

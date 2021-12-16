@@ -2,7 +2,7 @@ import { table, minifyRecords } from "./utils/airTable";
 import { validateCaptchaResponse } from '../../utils/validateCaptchaResponse';
 const { IncomingWebhook } = require('@slack/webhook');
 import fetch from 'node-fetch';
-
+import { FB_PIXEL_ID } from "../../lib/fbpixel";
 export default async (req, res) => {
   const {
     company_name,
@@ -173,12 +173,54 @@ export default async (req, res) => {
 
 
 //TODO: Prob use a response object to see what error mesage you are getting when trying to send the fetch post req to the slack API endpoint.
+// Also make sure you are using the fetch API correctly.
 
 
-    const fbEvnt = await fetch('https://graph.facebook.com/{API_VERSION}/{PIXEL_ID}/events?access_token={TOKEN}', {
-        method: 'POST',
+    // console.log("this is the request");
+    // console.log(req.body);
 
-    })
+    let current_timestamp = Math.floor(new Date() / 1000);
+
+        // const fbEvnt = await fetch(`https://graph.facebook.com/v13.0/${FB_PIXEL_ID}/events?access_token=${process.env.FB_ACCESS_TOKEN}`, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         "data": [
+        //         {
+        //             "event_name": "Purchase",
+        //             "event_time": 1639540843,
+        //             "event_id": "event.id.123",
+        //             "event_source_url": "http:\/\/theclubagency.com\/",         
+        //             "action_source": "website",
+        //             "user_data": {
+        //                 "client_ip_address": "192.19.9.9",
+        //                 "client_user_agent": "test ua",
+        //                 "em": [
+        //                     "309a0a5c3e211326ae75ca18196d301a9bdbd1a882a4d2569511033da23f0abd"
+        //                 ],
+        //                 "ph": [
+        //                     "254aa248acb47dd654ca3ea53f48c2c26d641d23d7e2e93a1ec56258df7674c4",
+        //                     "6f4fcb9deaeadc8f9746ae76d97ce1239e98b404efe5da3ee0b7149740f89ad6"
+        //                 ],
+        //                 "fbc": "fb.1.1554763741205.AbCdEfGhIjKlMnOpQrStUvWxYz1234567890",
+        //                 "fbp": "fb.1.1558571054389.1098115397"
+        //             },
+        //             "custom_data": {
+        //                 "value": 100.2,
+        //                 "currency": "USD",
+        //                 "content_ids": [
+        //                     "product.id.123"
+        //                 ],
+        //                 "content_type": "product"
+        //             },
+        //             "opt_out": false
+        //         },
+        //         ]
+        //     })
+        // }).then(response => console.log(response))
+
     res.statusCode = 200;
     res.json(createdRecord);
   } catch (error) {

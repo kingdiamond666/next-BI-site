@@ -1,4 +1,5 @@
 import {useForm, useFormState} from 'react-hook-form';
+import Router from 'next/router'
 import React, {useRef, useState} from 'react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
@@ -53,6 +54,8 @@ export default function Form({content, onSuccess, handleFirstName}) {
             for(let value in values){
                 setValue(value, '');
             }
+            const {pathname} = Router;
+            Router.push('/ThankYou')
             resolve()
           })
         }
